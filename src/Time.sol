@@ -6,10 +6,7 @@ contract Auction {
     uint256 public endAt = block.timestamp + 7 days; // Auction ends in 7 days
 
     function bid() external {
-        require(
-            block.timestamp >= startAt && block.timestamp <= endAt,
-            "Auction is not active"
-        );
+        require(block.timestamp >= startAt && block.timestamp <= endAt, "Auction is not active");
     }
 
     function end() external {

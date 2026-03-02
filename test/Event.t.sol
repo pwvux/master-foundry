@@ -5,7 +5,7 @@ import {Event} from "../src/Event.sol";
 
 contract EventTest is Test {
     Event public ev;
-       event Transfer(address indexed from, address indexed to, uint256 amount);
+    event Transfer(address indexed from, address indexed to, uint256 amount);
 
     function setUp() public {
         ev = new Event();
@@ -26,7 +26,7 @@ contract EventTest is Test {
         address[] memory to = new address[](2);
         to[0] = address(0x123);
         to[1] = address(0x456);
-        for(uint256 i = 0; i < to.length; i++) {
+        for (uint256 i = 0; i < to.length; i++) {
             vm.expectEmit(true, true, false, true);
             emit Transfer(address(this), to[i], amounts[i]);
         }
