@@ -9,10 +9,7 @@ contract Event {
         emit Transfer(msg.sender, _to, _amount);
     }
 
-    function transferMany(
-        address[] calldata _to,
-        uint256[] calldata _amounts
-    ) external {
+    function transferMany(address[] calldata _to, uint256[] calldata _amounts) external {
         require(_to.length == _amounts.length, "Mismatched input lengths");
         for (uint256 i = 0; i < _to.length; i++) {
             emit Transfer(msg.sender, _to[i], _amounts[i]);
