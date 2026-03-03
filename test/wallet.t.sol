@@ -27,7 +27,7 @@ contract WalletTest is Test {
     }
 
     function _send(uint256 _amount) internal {
-        (bool success, ) = address(wallet).call{value: _amount}("");
+        (bool success,) = address(wallet).call{value: _amount}("");
         require(success, "Failed to send Ether");
     }
 
